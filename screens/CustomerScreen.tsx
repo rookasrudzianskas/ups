@@ -1,5 +1,5 @@
 import React, {useLayoutEffect} from 'react';
-import {Text, View, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, SafeAreaView, ScrollView, Image} from 'react-native';
 import {CompositeNavigationProp, useNavigation} from "@react-navigation/native";
 import {BottomTabNavigationProp} from "@react-navigation/bottom-tabs";
 import {TabStackParamList} from "../navigator/TabNavigator";
@@ -22,7 +22,8 @@ const CustomerScreen = () => {
     })
     return (
         <ScrollView>
-
+            {/* @ts-ignore */}
+            <Image source={{uri: 'https://links.papareact.com/3jc'}} className="w-full h-64" />
         </ScrollView>
     );
 };
