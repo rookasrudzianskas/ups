@@ -21,6 +21,10 @@ type Item = {
     quantity: number;
 }
 
+type OrderResponse = {
+    value: Order
+}
+
 type CustomerResponse = {
     name: ID;
     value: Customer;
