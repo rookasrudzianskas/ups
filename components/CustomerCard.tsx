@@ -18,7 +18,11 @@ const CustomerCard = ({email, name, userId}: Props) => {
     const tw = useTailwind();
 
     return (
-        <TouchableOpacity activeOpacity={0.7}>
+        // @ts-ignore
+        <TouchableOpacity onPress={() => navigation.navigate('MyModal', {
+            name: name,
+            userId: userId
+        })} activeOpacity={0.7}>
                 <Card containerStyle={{
                 // make it rounded corners
                 borderRadius: 7,
