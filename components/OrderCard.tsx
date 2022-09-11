@@ -17,7 +17,9 @@ const OrderCard = ({item}: Props) => {
 
     return (
         // @ts-ignore
-        <TouchableOpacity onPress={() => navigation.navigate('Order')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Order', {
+            order: item
+        })}>
             <Card containerStyle={{paddingHorizontal: 10, borderRadius: 7}}>
                 {/*@ts-ignore*/}
                 <View className="flex-row justify-between items-center">

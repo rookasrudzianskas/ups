@@ -5,13 +5,14 @@ import MapView, {Marker} from 'react-native-maps';
 import {Dimensions } from 'react-native';
 
 type Props = {
-    order: Order
+    fullWidth?: boolean;
+    order: Order;
 }
 
-const DeliveryCard = ({order}: Props) => {
+const DeliveryCard = ({order, fullWidth}: Props) => {
     return (
         <Card containerStyle={{borderRadius: 7, backgroundColor: '#59C1CC', marginVertical: 10, padding: 0, paddingTop: 16, shadowColor: 'black', shadowOffset: { width: 0, height: 2}, shadowOpacity: 0.2, shadowRadius: 4}}>
-                <View>
+                <View style={fullWidth && {height: "100%"}}>
                     <Icon name="box" type={"entypo"} size={50} color="white" />
                     {/*@ts-ignore*/}
                     <View className="">
