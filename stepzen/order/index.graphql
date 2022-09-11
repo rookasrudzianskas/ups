@@ -7,16 +7,20 @@ type Order {
   City: String
   Lat: Float
   Lng: Float
-#  Tracking items
   trackingItems: TrackingItems
-  @materializer(
-    name: "getTrackingItemsItemsById"
-    arguments: [{ name: "id", field: "trackingId" }]
+    @materializer(
+      query: "getTrackingItemById"
+      arguments: [{ name: "id", field: "trackingId" }]
   )
 }
 
+type OrderList {
+  name: ID
+  value: Order
+}
+
 type Query {
-  getOrders: JSON
+  getOrders: [OrderList]
     @rest(
       endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/orders.json"
     )
