@@ -35,7 +35,7 @@ const ModalScreen = () => {
                 </View>
             </View>
 
-            <FlatList data={orders} keyExtractor={order => order.trackingId} renderItem={({item: order}) => <DeliveryCard order={order}/>} />
+            <FlatList contentContainerStyle={{paddingBottom: 200}} data={orders} keyExtractor={order => order.trackingId} renderItem={({item: order}) => <DeliveryCard order={order}/>} />
         </View>
     );
 };
