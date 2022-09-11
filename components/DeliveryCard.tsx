@@ -8,8 +8,6 @@ type Props = {
     order: Order
 }
 
-
-
 const DeliveryCard = ({order}: Props) => {
     return (
         <Card containerStyle={{borderRadius: 7, backgroundColor: '#59C1CC', marginVertical: 10, padding: 0, paddingTop: 16, shadowColor: 'black', shadowOffset: { width: 0, height: 2}, shadowOpacity: 0.2, shadowRadius: 4}}>
