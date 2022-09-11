@@ -1,7 +1,17 @@
+type Order {
+  carrier: String
+  createdAt: Date
+  shippingCost: Int
+  trackingId: String
+  Address: String
+  City: String
+  Lat: Float
+  Lng: Float
+#  Tracking items
+
+}
+
 type Query {
-  """
-  Result typed as JSON since it has fields ["-N6rOvLXK2t39x-Bp0UP", "-N6rQ_YDMNTjq_mCbhZN", "-N6rQsEqX4vt-0cBA336", "-N6rQvnBSkz2kglMvr5H", "-N6rSQz62DlXFPbd32CD"] that are invalid graphql identifiers
-  """
   getOrders: JSON
     @rest(
       endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/orders.json"

@@ -1,0 +1,17 @@
+type ItemsEntry {
+  item_id: Int
+  name: String
+  price: Float
+  quantity: Int
+}
+type TrackingItemsList {
+  customer_id: String
+  items: [ItemsEntry]
+}
+
+type Query {
+  getTrackingItemsItemsById: TrackingItemsList
+    @rest(
+      endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/trackingItems/1Z4V180W0324616505.json"
+    )
+}
