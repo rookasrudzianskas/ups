@@ -7,7 +7,7 @@ import RootNavigator from "./navigator/RootNavigator";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: 'http://localhost:5001/api/elevated-dolphin',
+    uri: 'https://saltillo.stepzen.net/api/elevated-dolphin/__graphql',
     cache: new InMemoryCache(),
 });
 
