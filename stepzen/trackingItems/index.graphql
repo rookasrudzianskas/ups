@@ -1,4 +1,4 @@
-type ItemsEntry {
+type Items {
   item_id: Int
   name: String
   price: Float
@@ -6,12 +6,12 @@ type ItemsEntry {
 }
 type TrackingItemsList {
   customer_id: String
-  items: [ItemsEntry]
+  items: [Items]
 }
 
 type Query {
-  getTrackingItemsItemsById: TrackingItemsList
+  getTrackingItemsItemsById(id: ID!): TrackingItemsList
     @rest(
-      endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/trackingItems/1Z4V180W0324616505.json"
+      endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/trackingItems/$id.json"
     )
 }
