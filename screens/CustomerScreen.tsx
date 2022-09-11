@@ -41,7 +41,7 @@ const CustomerScreen = () => {
             <View className="bg-white pt-5 pb-0 px-10">
                 <Input placeholder="Search by Customer" value={input} onChangeText={(text) => setInput(text)} />
             </View>
-            {data?.getCustomers.map(({ name: ID, value: { email, name }}: CustomerResponse) => (
+            {data?.getCustomers?.filter((customer: CustomerList) => customer.value.name.includes(input)).map(({ name: ID, value: { email, name }}: CustomerResponse) => (
                 // @ts-ignore
                 <CustomerCard key={ID} email={email} name={name} userId={ID} />
             ))}
