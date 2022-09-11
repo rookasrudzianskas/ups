@@ -23,5 +23,6 @@ type Query {
   getOrders: [OrderList]
     @rest(
       endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/orders.json"
+      transforms: [{ pathpattern: [], editor: "objectToArray" }]
     )
 }

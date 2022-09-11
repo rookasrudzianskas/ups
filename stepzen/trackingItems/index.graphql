@@ -9,9 +9,20 @@ type TrackingItems {
   items: [Items]
 }
 
+type TrackingItemsList {
+  name: ID
+  value: TrackingItems
+}
+
 type Query {
   getTrackingItemById(id: ID!): TrackingItems
     @rest(
       endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/trackingItems/$id.json"
+    )
+
+  getTrackingItems: [TrackingItemsList]
+    @rest(
+      endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/trackingItems.json"
+      transforms: [{ pathpattern: [], editor: "objectToArray" }]
     )
 }
