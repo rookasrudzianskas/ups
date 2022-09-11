@@ -17,11 +17,12 @@ export default function App() {
 
     return (
         // @ts-ignore
-        <ApolloProvider client={client}>
-            <NavigationContainer>
-                <RootNavigator />
-                <StatusBar style="auto" />
-            </NavigationContainer>
-        </ApolloProvider>
+        // <ThemeContextProvider value={'light'}>
+            <ApolloProvider client={client}>
+                <NavigationContainer>
+                    <RootNavigator />
+                    <StatusBar style="auto" />
+                </NavigationContainer>
+            </ApolloProvider>
   );
 }
