@@ -20,6 +20,11 @@ type OrderList {
 }
 
 type Query {
+  getOrderById(id: ID): Order
+    @rest(
+      endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/orders/$id.json"
+    )
+
   getOrders: [OrderList]
     @rest(
       endpoint: "https://rookas-ups-default-rtdb.firebaseio.com/orders.json"
