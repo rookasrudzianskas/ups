@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import CustomerScreen from "./screens/CustomerScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RootNavigator from "./navigator/RootNavigator";
 
 export default function App() {
 
@@ -11,9 +12,7 @@ export default function App() {
     return (
         // @ts-ignore
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Customer" component={CustomerScreen} />
-            </Stack.Navigator>
+            <RootNavigator />
             <StatusBar style="auto" />
         </NavigationContainer>
   );
